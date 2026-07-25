@@ -2,10 +2,22 @@
 title: Markdown 扩展功能
 published: 1970-01-01
 updated: 1970-01-01
-description: "了解 Firefly 中的 Markdown 功能"
-image: ""
-tags: [演示, 示例, Markdown, Firefly]
-category: "文章示例"
+description: 了解 Firefly 中的 Markdown 功能
+image: ''
+category: 文章示例
+tags:
+  - 演示
+  - 示例
+  - Markdown
+  - Firefly
+draft: true
+author: ''
+lang: ''
+sourceLink: ''
+licenseName: ''
+licenseUrl: ''
+password: ''
+passwordHint: ''
 slug: markdown-extended
 ---
 
@@ -69,7 +81,7 @@ export const siteConfig: SiteConfig = {
 > 这是一个带有自定义标题的示例。
 ```
 
----
+***
 
 ### 2. Obsidian 主题风格
 
@@ -79,7 +91,6 @@ export const siteConfig: SiteConfig = {
 <summary>点击展开 Obsidian 语法列表</summary>
 
 ```markdown
-
 > [!NOTE] NOTE
 > 通用的笔记块。
 
@@ -164,11 +175,12 @@ export const siteConfig: SiteConfig = {
 > [!NOTE] 自定义标题
 > 这是一个带有自定义标题的示例。
 ```
+
 </details>
 
 ![Obsidian](./images/obsidian.avif)
 
----
+***
 
 ### 3. VitePress 主题风格
 
@@ -196,11 +208,12 @@ export const siteConfig: SiteConfig = {
 > [!TIP] 自定义标题
 > VitePress 风格同样支持自定义标题。
 ```
+
 </details>
 
 ![VitePress](./images/vitepress.avif)
 
----
+***
 
 ### 4. Docusaurus 主题风格
 
@@ -241,7 +254,7 @@ export const siteConfig: SiteConfig = {
 
 ![Docusaurus](./images/docusaurus.avif)
 
----
+***
 
 ## 剧透
 
@@ -277,5 +290,4 @@ export const siteConfig: SiteConfig = {
 [/grid]
 ```
 
-
----
+***
