@@ -6,10 +6,10 @@ const SITE_LANG = "zh_CN";
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly123123123",
+	title: "Siyue Blog",
 
 	// 站点副标题
-	subtitle: "Demo site213213213",
+	subtitle: "Demo site",
 
 	// 站点 URL
 	site_url: "https://firefly.cuteleaf.cn",
