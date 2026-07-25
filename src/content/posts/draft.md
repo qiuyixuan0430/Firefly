@@ -1,9 +1,21 @@
 ---
 title: 草稿示例
 published: 1970-01-01
-tags: [Markdown, 博客, 演示]
+updated: ''
+description: ''
 category: 文章示例
+tags:
+  - Markdown
+  - 博客
+  - 演示
 draft: true
+author: ''
+lang: ''
+sourceLink: ''
+licenseName: ''
+licenseUrl: ''
+password: ''
+passwordHint: ''
 slug: draft
 ---
 
@@ -21,3 +33,4 @@ tags: [Markdown, 博客, 演示]
 category: 示例
 draft: false
 ---
+```
