@@ -2,12 +2,17 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
+const optionalDate = z.preprocess(
+	(value) => (value === "" || value === null ? undefined : value),
+	z.coerce.date().optional(),
+);
+
 const postsCollection = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/posts" }),
 	schema: z.object({
 		title: z.string(),
-		published: z.date(),
-		updated: z.date().optional(),
+		published: z.coerce.date(),
+		updated: optionalDate,
 		draft: z.boolean().optional().default(false),
 		description: z.string().optional().default(""),
 		image: z.string().optional().default(""),
@@ -39,7 +44,7 @@ const specCollection = defineCollection({
 const dynamicCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/dynamic" }),
 	schema: z.object({
-		published: z.date(),
+		published: z.coerce.date(),
 		pinned: z.boolean().optional().default(false),
 	}),
 });
