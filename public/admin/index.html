@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="robots" content="noindex, nofollow" />
+		<meta name="color-scheme" content="light dark" />
+		<title>博客写作台</title>
+		<style>
+			:root {
+				font-family:
+					Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+				color: #243047;
+				background: #f5f7fb;
+			}
+			body {
+				margin: 0;
+			}
+			.loading {
+				display: grid;
+				min-height: 100vh;
+				place-items: center;
+				padding: 24px;
+				box-sizing: border-box;
+			}
+			.loading-card {
+				width: min(430px, 100%);
+				padding: 32px;
+				border: 1px solid #dfe5ef;
+				border-radius: 22px;
+				background: #fff;
+				box-shadow: 0 22px 60px rgb(48 68 104 / 12%);
+				text-align: center;
+			}
+			.loading-mark {
+				display: inline-grid;
+				width: 52px;
+				height: 52px;
+				place-items: center;
+				border-radius: 16px;
+				background: linear-gradient(135deg, #86d7c5, #80a8f8);
+				color: #fff;
+				font-size: 26px;
+			}
+			h1 {
+				margin: 18px 0 8px;
+				font-size: 24px;
+			}
+			p {
+				margin: 0;
+				color: #708099;
+				line-height: 1.7;
+			}
+			@media (prefers-color-scheme: dark) {
+				:root {
+					color: #eef3ff;
+					background: #111620;
+				}
+				.loading-card {
+					border-color: #2b3442;
+					background: #1a202c;
+				}
+				p {
+					color: #aeb9ca;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="loading" aria-live="polite">
+			<section class="loading-card">
+				<div class="loading-mark" aria-hidden="true">✦</div>
+				<h1>博客写作台</h1>
+				<p>正在载入图文编辑器，请稍候……</p>
+			</section>
+		</main>
+		<script src="https://unpkg.com/@sveltia/cms@0.172.4/dist/sveltia-cms.js"></script>
+	</body>
+</html>
