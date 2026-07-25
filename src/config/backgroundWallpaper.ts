@@ -68,17 +68,15 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "Flowing river!",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"Years drift on, I keep seeking",
+				"岁月奔流，求索不息",
+				"歳月は流れ、我は探求し続ける",
+				"Les années s'écoulent, je continue à chercher.",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
