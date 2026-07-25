@@ -1,11 +1,22 @@
 ---
 title: Firefly 代码块示例
 published: 1970-01-03
-pinned: false
+updated: ''
 description: 在Firefly中使用表达性代码的代码块在 Markdown 中的外观。
-tags: [Markdown, Firefly]
-category: 文章示例
 image: ./images/firefly3.avif
+category: 文章示例
+tags:
+  - Markdown
+  - Firefly
+draft: true
+pinned: false
+author: ''
+lang: ''
+sourceLink: ''
+licenseName: ''
+licenseUrl: ''
+password: ''
+passwordHint: ''
 slug: code-examples
 ---
 
@@ -60,11 +71,12 @@ console.log('此代码有语法高亮!')
 
 #### 代码编辑器框架
 
-```js title="my-test-file.js"
+```js
+title="my-test-file.js"
 console.log('标题属性示例')
 ```
 
----
+***
 
 ```html
 <!-- src/content/index.html -->
@@ -77,21 +89,24 @@ console.log('标题属性示例')
 echo "此终端框架没有标题"
 ```
 
----
+***
 
-```powershell title="PowerShell 终端示例"
+```powershell
+title="PowerShell 终端示例"
 Write-Output "这个有标题!"
 ```
 
 #### 覆盖框架类型
 
-```sh frame="none"
+```sh
+frame="none"
 echo "看，没有框架!"
 ```
 
----
+***
 
-```ps frame="code" title="PowerShell Profile.ps1"
+```ps
+frame="code" title="PowerShell Profile.ps1"
 # 如果不覆盖，这将是一个终端框架
 function Watch-Tail { Get-Content -Tail 20 -Wait $args }
 New-Alias tail Watch-Tail
@@ -103,7 +118,8 @@ New-Alias tail Watch-Tail
 
 #### 标记整行和行范围
 
-```js {1, 4, 7-8}
+```js
+{1, 4, 7-8}
 // 第1行 - 通过行号定位
 // 第2行
 // 第3行
@@ -116,7 +132,8 @@ New-Alias tail Watch-Tail
 
 #### 选择行标记类型 (mark, ins, del)
 
-```js title="line-markers.js" del={2} ins={3-4} {6}
+```js
+title="line-markers.js" del={2} ins={3-4} {6}
 function demo() {
   console.log('此行标记为已删除')
   // 此行和下一行标记为已插入
@@ -128,7 +145,8 @@ function demo() {
 
 #### 为行标记添加标签
 
-```jsx {"1":5} del={"2":7-8} ins={"3":10-12}
+```jsx
+{"1":5} del={"2":7-8} ins={"3":10-12}
 // labeled-line-markers.jsx
 <button
   role="button"
@@ -146,7 +164,8 @@ function demo() {
 
 #### 在单独行上添加长标签
 
-```jsx {"1. Provide the value prop here:":5-6} del={"2. Remove the disabled and active states:":8-10} ins={"3. Add this to render the children inside the button:":12-15}
+```jsx
+{"1. Provide the value prop here:":5-6} del={"2. Remove the disabled and active states:":8-10} ins={"3. Add this to render the children inside the button:":12-15}
 // labeled-line-markers.jsx
 <button
   role="button"
@@ -173,7 +192,7 @@ function demo() {
 这是常规行
 ```
 
----
+***
 
 ```diff
 --- a/README.md
@@ -186,7 +205,8 @@ function demo() {
 
 #### 结合语法高亮和类似 diff 的语法
 
-```diff lang="js"
+```diff
+lang="js"
   function thisIsJavaScript() {
     // 整个块都会以 JavaScript 高亮显示，
     // 并且我们仍然可以为其添加 diff 标记！
@@ -197,7 +217,8 @@ function demo() {
 
 #### 标记行内的单独文本
 
-```js "given text"
+```js
+"given text"
 function demo() {
   // 标记行内的任何给定文本
   return '支持给定文本的多个匹配项';
@@ -206,19 +227,22 @@ function demo() {
 
 #### 正则表达式
 
-```ts /ye[sp]/
+```ts
+/ye[sp]/
 console.log('单词 yes 和 yep 将被标记。')
 ```
 
 #### 转义正斜杠
 
-```sh /\/ho.*\//
+```sh
+/\/ho.*\//
 echo "Test" > /home/test.txt
 ```
 
 #### 选择内联标记类型 (mark, ins, del)
 
-```js "return true;" ins="inserted" del="deleted"
+```js
+"return true;" ins="inserted" del="deleted"
 function demo() {
   console.log('这些是插入和删除的标记类型');
   // return 语句使用默认标记类型
@@ -232,16 +256,18 @@ function demo() {
 
 #### 为每个块配置自动换行
 
-```js wrap
+```js
+wrap
 // 启用换行的示例
 function getLongString() {
   return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
 }
 ```
 
----
+***
 
-```js wrap=false
+```js
+wrap=false
 // wrap=false 的示例
 function getLongString() {
   return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
@@ -250,16 +276,18 @@ function getLongString() {
 
 #### 配置换行的缩进
 
-```js wrap preserveIndent
+```js
+wrap preserveIndent
 // preserveIndent 示例（默认启用）
 function getLongString() {
   return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
 }
 ```
 
----
+***
 
-```js wrap preserveIndent=false
+```js
+wrap preserveIndent=false
 // preserveIndent=false 的示例
 function getLongString() {
   return '这是一个非常长的字符串，除非容器极宽，否则很可能无法适应可用空间'
@@ -270,7 +298,8 @@ function getLongString() {
 
 [可折叠部分](https://expressive-code.com/plugins/collapsible-sections/)
 
-```js collapse={1-5, 12-14, 21-24}
+```js
+collapse={1-5, 12-14, 21-24}
 // 所有这些样板设置代码将被折叠
 import { someBoilerplateEngine } from '@example/some-boilerplate'
 import { evenMoreBoilerplate } from '@example/even-more-boilerplate'
@@ -303,15 +332,17 @@ engine.shutdown({ reason: '示例样板代码结束' })
 
 ### 为每个块显示行号
 
-```js showLineNumbers
+```js
+showLineNumbers
 // 此代码块将显示行号
 console.log('来自第2行的问候!')
 console.log('我在第3行')
 ```
 
----
+***
 
-```js showLineNumbers=false
+```js
+showLineNumbers=false
 // 此块禁用行号
 console.log('你好?')
 console.log('抱歉，你知道我在第几行吗?')
@@ -319,7 +350,8 @@ console.log('抱歉，你知道我在第几行吗?')
 
 ### 更改起始行号
 
-```js showLineNumbers startLineNumber=5
+```javascript
+showLineNumbers startLineNumber=5
 console.log('来自第5行的问候!')
 console.log('我在第6行')
 ```
