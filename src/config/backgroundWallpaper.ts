@@ -42,9 +42,9 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			"assets/images/DesktopWallpaper/myblog01.png",
 			"assets/images/DesktopWallpaper/my_blog02.png",
 			"assets/images/DesktopWallpaper/my_blog03.png",
-			"assets/images/DesktopWallpaper/my_blog04.png",
-			"assets/images/DesktopWallpaper/my_blog05.png",
-			"assets/images/DesktopWallpaper/my_blog06.png",
+			"assets/images/DesktopWallpaper/my_blog04.jpg",
+			"assets/images/DesktopWallpaper/my_blog05.jpg",
+			"assets/images/DesktopWallpaper/my_blog06.jpg",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
