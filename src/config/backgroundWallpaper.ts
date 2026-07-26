@@ -41,20 +41,22 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		desktop: [
 			"assets/images/DesktopWallpaper/myblog01.png",
 			"assets/images/DesktopWallpaper/my_blog02.png",
-			"assets/images/DesktopWallpaper/my_blog03.png",
+			"assets/images/DesktopWallpaper/my_blog03.jpg",
 			"assets/images/DesktopWallpaper/my_blog04.jpg",
 			"assets/images/DesktopWallpaper/my_blog05.jpg",
 			"assets/images/DesktopWallpaper/my_blog06.jpg",
+			"assets/images/DesktopWallpaper/my_blog07.png",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
 		mobile: [
-			"assets/images/MobileWallpaper/m1.avif",
-			"assets/images/MobileWallpaper/m2.avif",
-			"assets/images/MobileWallpaper/m3.avif",
-			"assets/images/MobileWallpaper/m4.avif",
-			"assets/images/MobileWallpaper/m5.avif",
-			"assets/images/MobileWallpaper/m6.avif",
+			"assets/images/MobileWallpaper/my_blogm01.png",
+			"assets/images/MobileWallpaper/my_blogm02.png",
+			"assets/images/MobileWallpaper/my_blogm03.png",
+			"assets/images/MobileWallpaper/my_blogm04.png",
+			"assets/images/MobileWallpaper/my_blogm05.jpg",
+			"assets/images/MobileWallpaper/my_blogm06.png",
+			"assets/images/MobileWallpaper/my_blogm07.png",
 		],
 		// 背景视频播放地址
 		// 支持单个视频路径（字符串）或多个视频循环（数组）
