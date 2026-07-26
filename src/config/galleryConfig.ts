@@ -26,8 +26,7 @@ export const galleryConfig: GalleryConfig = {
 		{
 			id: "encrypted-test",
 			name: "加密相册",
-			description:
-				"设置了访问密码，只有输入正确的密码才能查看相册内容。",
+			description: "设置了访问密码，只有输入正确的密码才能查看相册内容。",
 			location: "未知",
 			date: "2026-04-30",
 			tags: ["加密相册"],
