@@ -4,7 +4,7 @@ published: 2026-07-25
 updated: 2026-07-25
 description: 我是Siyue，这是我的第一篇Blog
 image: /uploads/6d6b492940541a482515e36df2948a933a15a04c.jpg
-category: ''
+category: 测试
 tags: []
 draft: false
 pinned: false
