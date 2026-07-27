@@ -272,7 +272,17 @@
 			}),
 		);
 
-		group.append(colorLabel, highlightLabel, font, size, clear);
+		const indent = document.createElement("button");
+		indent.type = "button";
+		indent.className = "firefly-first-line-indent";
+		indent.textContent = "首行缩进";
+		indent.title = "当前段落首行缩进两个汉字；再次点击取消";
+		indent.addEventListener("mousedown", (event) => event.preventDefault());
+		indent.addEventListener("click", () =>
+			root.__fireflyToggleFirstLineIndent?.(),
+		);
+
+		group.append(colorLabel, highlightLabel, font, size, clear, indent);
 		return group;
 	}
 
@@ -296,7 +306,7 @@
 		.firefly-inline-tools label { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; white-space: nowrap; }
 		.firefly-inline-tools input[type="color"] { width: 25px; height: 25px; padding: 1px; border: 0; background: transparent; cursor: pointer; }
 		.firefly-inline-tools select { min-width: 62px; height: 30px; border: 1px solid var(--sui-textbox-border-color); border-radius: 5px; background: var(--sui-primary-background-color); color: inherit; }
-		.firefly-clear-inline { min-height: 30px; padding: 0 7px; border: 1px solid var(--sui-textbox-border-color); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
+		.firefly-clear-inline, .firefly-first-line-indent { min-height: 30px; padding: 0 7px; border: 1px solid var(--sui-textbox-border-color); border-radius: 5px; background: transparent; color: inherit; cursor: pointer; }
 	`;
 	document.head.append(adminStyle);
 

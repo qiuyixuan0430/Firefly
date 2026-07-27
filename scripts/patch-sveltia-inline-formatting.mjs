@@ -22,12 +22,22 @@ const inlineBridgeV4 = inlineBridgeV3
 		",window.__fireflyApplyInlineStyle=t=>",
 		",ffApply=window.__fireflyApplyInlineStyle=t=>",
 	);
+const inlineBridgeV5 = inlineBridgeV4
+	.replace("c=[],ffRemember,ffApply;", "c=[],ffRemember,ffApply,ffIndent;")
+	.replace(
+		")}let l=e=>",
+		"),ffIndent=()=>s.update(()=>{let e=KV();if(!SV(e)&&ffs&&(pU(ffs),e=KV()),!SV(e))return;let t=e.anchor.getNode();for(;t.getParent()&&t.getParent().getType()!==`root`;)t=t.getParent();let n=t.getFirstDescendant();if(!mV(n))return;let r=n.getTextContent(),i=`　　`;n.setTextContent(r.startsWith(i)?r.slice(i.length):i+r)})}let l=e=>",
+	);
 const rootListenerV1 = "l(s.registerRootListener(e=>{if(!e)return;let t=e=>";
 const rootListenerV2 =
 	"l(s.registerRootListener(e=>{if(!e)return;e.__fireflyRememberInlineSelection=ffRemember,e.__fireflyApplyInlineStyle=ffApply;let t=e=>";
 const rootListenerV3 = rootListenerV2.replace(
 	";let t=e=>",
 	";e.setAttribute(`data-firefly-inline`,`ready`);let t=e=>",
+);
+const rootListenerV4 = rootListenerV3.replace(
+	"e.__fireflyApplyInlineStyle=ffApply;",
+	"e.__fireflyApplyInlineStyle=ffApply,e.__fireflyToggleFirstLineIndent=ffIndent;",
 );
 const editorFactoryV1 =
 	"X1=({enabledButtons:e=[],components:t=[],useMarkdownShortcuts:n,isCodeEditor:r=!1,defaultLanguage:i=`plain`})=>{let a=";
@@ -58,6 +68,10 @@ if (source.includes(marker)) {
 		source = source.replace(inlineBridgeV3, () => inlineBridgeV4);
 		console.log("Bound inline formatting functions to the active editor.");
 	}
+	if (source.includes(inlineBridgeV4)) {
+		source = source.replace(inlineBridgeV4, () => inlineBridgeV5);
+		console.log("Added first-line indentation support.");
+	}
 	if (source.includes(rootListenerV1)) {
 		source = source.replace(rootListenerV1, () => rootListenerV2);
 		console.log("Attached the inline bridge to the editor root.");
@@ -65,6 +79,10 @@ if (source.includes(marker)) {
 	if (source.includes(rootListenerV2)) {
 		source = source.replace(rootListenerV2, () => rootListenerV3);
 		console.log("Added the inline editor readiness marker.");
+	}
+	if (source.includes(rootListenerV3)) {
+		source = source.replace(rootListenerV3, () => rootListenerV4);
+		console.log("Attached first-line indentation to the editor root.");
 	}
 	if (source.includes(editorFactoryV1)) {
 		// No debug instrumentation is added in production builds.
@@ -88,7 +106,7 @@ if (source.includes(marker)) {
 		console.log("Added the inline transformer dependency declaration.");
 	}
 	fs.writeFileSync(bundlePath, source);
-	if (!source.includes(inlineBridgeV4) || !source.includes(rootListenerV3)) {
+	if (!source.includes(inlineBridgeV5) || !source.includes(rootListenerV4)) {
 		console.log("Sveltia inline formatting patch is already applied.");
 	}
 	process.exit(0);
@@ -129,11 +147,11 @@ replaceOnce(
 	"inline style transformer activation",
 );
 
-replaceOnce("s=zH(a),c=[],l=e=>", inlineBridgeV4, "selected text style bridge");
+replaceOnce("s=zH(a),c=[],l=e=>", inlineBridgeV5, "selected text style bridge");
 
 replaceOnce(
 	rootListenerV1,
-	rootListenerV3,
+	rootListenerV4,
 	"inline formatting editor root binding",
 );
 
