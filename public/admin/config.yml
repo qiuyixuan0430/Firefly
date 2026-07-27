@@ -154,4 +154,4 @@ collections:
         name: body
         widget: richtext
         required: true
-        hint: 支持标题、粗体、链接、列表、引用、代码和图片，无需手写 Markdown。
+        hint: 普通排版和图片继续使用原工具栏；颜色、荧光、字体、字号、对齐和首行缩进请点击“高级文字”按钮。

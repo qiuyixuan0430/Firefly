@@ -214,3 +214,12 @@ body.wallpaper-transparent .custom-md {
   }
 }
 
+/* Admin“高级文字”组件：样式本身保存在行内，这里只负责安全的版面行为。 */
+.custom-md .firefly-word-style {
+	box-sizing: border-box;
+	margin-block: 1em;
+	padding: 0.12em 0.3em;
+	border-radius: 0.25em;
+	line-height: 1.9;
+	overflow-wrap: anywhere;
+}
