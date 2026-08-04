@@ -9,6 +9,7 @@ tags:
   - Key社
   - Galgame
   - anemoi
+  - 测评
 draft: true
 pinned: false
 comment: true
