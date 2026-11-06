@@ -37,8 +37,10 @@ passwordHint: ''
 
 # <span style="color: #e55848; font-size: 24px; font-family: Noto Serif SC, Songti SC, SimSun, serif">二、调制与信道编码的重要性</span>
 
-上文说到的BPSK 全称是 Binary Phase Shift Keying，即二进制相移键控，<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">其使用两种相差180°的载波相位分别代表二进制0和1，即：</span>
+<span style="font-family: PingFang SC, Microsoft YaHei, sans-serif; font-size: 16px">　　上文说到的BPSK 全称是 Binary Phase Shift Keying，即二进制相移键控，其使用两种相差180°的载波相位分别代表二进制0和1，即：</span>
 
-<figure class="firefly-aligned-image" data-align="center"><img src="" alt="" title="" /></figure>
+<figure class="firefly-aligned-image" data-align="center"><img src="/uploads/pasted-image-1793954367879.png" alt="" title="" /></figure>
 
-<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">由上文所述，实际上无论是何种调制方法，都会有极大的可能性产生误码，因此信道编码在信息传输中就具有很高的重要性，其利用增加的冗余信息，在噪声存在时尽可能的恢复正确的数据。</span>
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">　　由上文所述，实际上无论是何种调制方法，都会有极大的可能性产生误码，因此信道编码在信息传输中就具有很高的重要性，</span><span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px; color: #ed3f2c">其利用增加的冗余信息，在噪声存在时尽可能的恢复正确的数据。</span>
+
+<figure class="firefly-aligned-image" data-align="center"><img src="/uploads/pasted-image-1793954401734.png" alt="信息传输链路" title="" /></figure>
