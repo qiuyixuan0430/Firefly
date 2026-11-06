@@ -3,6 +3,7 @@
 		default: "inherit",
 		sans: "PingFang SC, Microsoft YaHei, sans-serif",
 		serif: "Noto Serif SC, Songti SC, SimSun, serif",
+		times: "Times New Roman, Times, serif",
 		kai: "KaiTi, STKaiti, serif",
 		mono: "JetBrains Mono, Consolas, monospace",
 	};
@@ -89,7 +90,7 @@
 		label: "旧版整段文字格式（不推荐）",
 		icon: "format_color_text",
 		pattern:
-			/^<p class="firefly-word-style" data-color="(#[0-9a-fA-F]{6})" data-highlight="(#[0-9a-fA-F]{6})" data-highlighted="(true|false)" data-font="(default|sans|serif|kai|mono)" data-size="(14|16|18|20|24|28|32)" data-bold="(true|false)" data-italic="(true|false)" data-align="(left|center|right|justify)" data-indent="(true|false)" style="[^"]*">([\s\S]*?)<\/p>$/,
+			/^<p class="firefly-word-style" data-color="(#[0-9a-fA-F]{6})" data-highlight="(#[0-9a-fA-F]{6})" data-highlighted="(true|false)" data-font="(default|sans|serif|times|kai|mono)" data-size="(14|16|18|20|24|28|32)" data-bold="(true|false)" data-italic="(true|false)" data-align="(left|center|right|justify)" data-indent="(true|false)" style="[^"]*">([\s\S]*?)<\/p>$/,
 		fields: [
 			{
 				label: "文字内容",
@@ -124,6 +125,7 @@
 					{ label: "跟随博客默认字体", value: "default" },
 					{ label: "黑体 / 无衬线", value: "sans" },
 					{ label: "宋体 / 衬线", value: "serif" },
+					{ label: "新罗马 / Times New Roman", value: "times" },
 					{ label: "楷体", value: "kai" },
 					{ label: "等宽字体", value: "mono" },
 				],
@@ -238,6 +240,7 @@
 		addOption(font, "默认字体", "inherit");
 		addOption(font, "黑体", "PingFang SC, Microsoft YaHei, sans-serif");
 		addOption(font, "宋体", "Noto Serif SC, Songti SC, SimSun, serif");
+		addOption(font, "新罗马 / Times New Roman", FONT_FAMILIES.times);
 		addOption(font, "楷体", "KaiTi, STKaiti, serif");
 		addOption(font, "等宽", "JetBrains Mono, Consolas, monospace");
 		font.addEventListener("change", () => {
