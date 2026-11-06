@@ -35,4 +35,10 @@ passwordHint: ''
 
 <span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">　　也就是说，</span><span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px; background-color: #f7db22">连续时间的带噪信号，经过接收机处理后，可以简化成一个离散的随机变量。</span>
 
-# <span style="color: #e55848; font-size: 24px; font-family: Noto Serif SC, Songti SC, SimSun, serif">二、BPSK调制与信道编码的重要性</span>
+# <span style="color: #e55848; font-size: 24px; font-family: Noto Serif SC, Songti SC, SimSun, serif">二、调制与信道编码的重要性</span>
+
+上文说到的BPSK 全称是 Binary Phase Shift Keying，即二进制相移键控，<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">其使用两种相差180°的载波相位分别代表二进制0和1，即：</span>
+
+<figure class="firefly-aligned-image" data-align="center"><img src="" alt="" title="" /></figure>
+
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">由上文所述，实际上</span>
