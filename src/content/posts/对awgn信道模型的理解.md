@@ -25,10 +25,10 @@ passwordHint: ''
 
 <span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">　　AWGN全称是Additive White Gaussian Noise，翻译为加性高斯白噪声，其核心表达式为：r(t) = s(t) + n(t),其中n(t)是信道中的高斯白噪声。若采用BPSK（二进制相控键移）调制，其使用两种相差180°的载波相位分别代表二进制0和1，也就是说比特1会发送+1而比特0会发出-1，当噪声达到一定程度时，便会使得接收机误判而产生误码。</span>
 
-![相关接收机](/uploads/20261106-121435.png "相关接收机")
+<figure class="firefly-aligned-image" data-align="center"><img src="" alt="相关接收机" title="相关接收机" /><figcaption>相关接收机</figcaption></figure>
 
-这是一个常见的相关接收机结构，输出信号首先由Bit mapping映射为每比特能量$\sqrt{E_b}$,接下来将其与基函数相乘，形成发送波形，途中高斯噪声n(t)被添加，接收端使用相同基函数相乘，最后在一个符号周期内积分并在t＝Ts时抽样，最终得到离散的接受信号，因此有：
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">　　这是一个常见的相关接收机结构，输出信号首先由Bit mapping映射为每比特能量</span>$\sqrt{E_b}$<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px"> ,接下来将其与基函数相乘，形成发送波形，途中高斯噪声n(t)被添加，接收端使用相同基函数相乘，最后在一个符号周期内积分并在t＝Ts时抽样，最终得到离散的接受信号，因此有</span>：
 
-![推导过程](/uploads/20261106-122617.png "推导过程")
+<figure class="firefly-aligned-image" data-align="center"><img src="/uploads/20261106-122617.png" alt="推导过程" title="推导过程" /><figcaption>推导过程</figcaption></figure>
 
-因此，接收机通过相关积分，将连续时间的带噪波形转化成一个可以直接用于判决或译码的数值。
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">　　也就是说，连续时间的带噪信号，经过接收机处理后，可以简化成一个离散的随机变量。</span>
