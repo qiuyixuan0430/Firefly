@@ -97,10 +97,11 @@
 	const alignments = new Set(["left", "center", "right"]);
 	function imageSource(value) {
 		const source = String(value).trim();
-		// Images may use repository paths or HTTP(S) URLs, never executable schemes.
+		// The CMS uses blob URLs for pending uploads, then replaces them with
+		// repository paths during Save. Keep that reference so the file is uploaded.
 		try {
 			const url = new URL(source, "https://blog.invalid/");
-			return ["https:", "http:"].includes(url.protocol) ? source : "";
+			return ["https:", "http:", "blob:"].includes(url.protocol) ? source : "";
 		} catch {
 			return "";
 		}
@@ -162,6 +163,9 @@
 			};
 		},
 		toBlock: alignedImage,
-		toPreview: alignedImage,
+		toPreview: (data) =>
+			imageSource(valueOf(data, "src"))
+				? alignedImage(data)
+				: '<figure class="firefly-aligned-image" data-align="center"><figcaption>请选择图片以预览。</figcaption></figure>',
 	});
 })();

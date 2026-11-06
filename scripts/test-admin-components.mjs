@@ -117,6 +117,24 @@ test("image alignment survives Markdown rendering with escaped attributes", asyn
 	assert.match(image.toBlock({ src: "/uploads/a.png" }), /data-align="center"/);
 });
 
+test("pending image uploads retain their blob reference for the CMS save pipeline", () => {
+	const src =
+		"blob:https://siyue.20040430.xyz/01234567-89ab-4cde-8fab-0123456789ab";
+	for (const align of ["left", "center", "right"]) {
+		const data = { src, align, caption: "新上传的图片" };
+		for (const render of [image.toBlock, image.toPreview]) {
+			const markup = render(data);
+			assert.ok(markup.includes(`src="${src}"`));
+			assert.ok(markup.includes(`data-align="${align}"`));
+		}
+	}
+});
+
+test("a missing image has a visible preview prompt instead of an empty src request", () => {
+	assert.match(image.toPreview({}), /请选择图片以预览/);
+	assert.doesNotMatch(image.toPreview({}), /<img\b/);
+});
+
 test("unsafe image URLs and markup cannot become executable HTML", () => {
 	for (const src of [
 		"javascript:alert(1)",
