@@ -10,6 +10,7 @@ import remarkMath from "remark-math";
 import rehypeFigure from "../src/plugins/rehype-figure.mjs";
 
 const components = new Map();
+const cmsElement = Symbol("CMS React element");
 vm.runInNewContext(
 	readFileSync(
 		new URL("../public/admin/editor-components.js", import.meta.url),
@@ -17,6 +18,8 @@ vm.runInNewContext(
 	),
 	{
 		window: {
+			katex,
+			h: (type, props, ...children) => ({ cmsElement, type, props, children }),
 			CMS: {
 				registerEditorComponent: (component) =>
 					components.set(component.id, component),
@@ -31,6 +34,35 @@ const image = components.get("aligned-image");
 const processor = await createMarkdownProcessor({
 	remarkPlugins: [remarkMath],
 	rehypePlugins: [[rehypeKatex, { katex }], rehypeFigure],
+});
+
+test("formula previews use the CMS React factory accepted by the preview pane", () => {
+	for (const [component, type] of [
+		[inline, "span"],
+		[block, "div"],
+	]) {
+		const preview = component.toPreview({ tex: String.raw`\sqrt{E_b}` });
+		assert.equal(preview.cmsElement, cmsElement);
+		assert.equal(preview.type, type);
+		assert.match(preview.props.dangerouslySetInnerHTML.__html, /class="katex"/);
+		assert.match(preview.props.dangerouslySetInnerHTML.__html, /<math\b/);
+	}
+});
+
+test("preview keeps error messages as text and preserves literal dollars", () => {
+	const error = inline.toPreview({ tex: String.raw`\invalidcommand` });
+	assert.match(error.props.className, /firefly-formula-error/);
+	assert.equal(error.props.dangerouslySetInnerHTML, undefined);
+	assert.match(error.children[0], /公式语法有误/);
+	const dollars = inline.toPreview({ tex: String.raw`\text{\$5}` });
+	assert.match(dollars.props.dangerouslySetInnerHTML.__html, /class="katex"/);
+	const unsafe = inline.toPreview({
+		tex: String.raw`\href{javascript:alert(1)}{x}`,
+	});
+	assert.doesNotMatch(
+		unsafe.props.dangerouslySetInnerHTML.__html,
+		/<a\b|href=/,
+	);
 });
 
 test("multiline equations retain LaTeX when saved and reopened", async () => {

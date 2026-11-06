@@ -16,30 +16,40 @@
 
 	function formulaPreview(data, displayMode) {
 		const tex = valueOf(data, "tex");
-		// A DOM preview keeps KaTeX's MathML intact in the sanitized CMS preview.
-		const preview = document.createElement(displayMode ? "div" : "span");
-		preview.className = "firefly-formula-preview";
+		const tag = displayMode ? "div" : "span";
+		const className = "firefly-formula-preview";
+		// The bundled CMS mounts React previews; plain DOM nodes are discarded.
+		// Use its own React factory so the preview also works inside the iframe.
 		if (!tex.trim()) {
-			preview.textContent = "在公式组件中输入 LaTeX，预览会自动更新。";
-			return preview;
+			return window.h(
+				tag,
+				{ className },
+				"在公式组件中输入 LaTeX，预览会自动更新。",
+			);
 		}
 		if (!window.katex) {
-			preview.textContent = tex;
-			return preview;
+			return window.h(tag, { className }, tex);
 		}
 		try {
-			window.katex.render(tex, preview, {
+			const html = window.katex.renderToString(tex, {
 				displayMode,
 				throwOnError: true,
 				trust: false,
 				maxExpand: 1000,
 				maxSize: 20,
 			});
+			return window.h(tag, {
+				className,
+				// Only KaTeX output with trust:false is inserted as HTML.
+				dangerouslySetInnerHTML: { __html: html },
+			});
 		} catch (error) {
-			preview.classList.add("firefly-formula-error");
-			preview.textContent = `公式语法有误：${error.message}`;
+			return window.h(
+				tag,
+				{ className: `${className} firefly-formula-error` },
+				`公式语法有误：${error.message}`,
+			);
 		}
-		return preview;
 	}
 
 	window.CMS.registerEditorComponent({
