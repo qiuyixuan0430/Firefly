@@ -41,4 +41,4 @@ passwordHint: ''
 
 <figure class="firefly-aligned-image" data-align="center"><img src="" alt="" title="" /></figure>
 
-<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">由上文所述，实际上</span>
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 16px">由上文所述，实际上无论是何种调制方法，都会有极大的可能性产生误码，因此信道编码在信息传输中就具有很高的重要性，其利用增加的冗余信息，在噪声存在时尽可能的恢复正确的数据。</span>
