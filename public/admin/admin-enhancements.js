@@ -315,5 +315,6 @@
 	installInlineToolbars();
 
 	window.CMS.registerPreviewStyle("./preview.css");
+	window.CMS.registerPreviewStyle("./vendor/katex/katex.min.css");
 	window.CMS.init();
 })();

@@ -34,6 +34,17 @@ export default function rehypeFigure() {
 				imgProps.referrerpolicy = "no-referrer";
 			}
 
+			// The admin component already supplies its own figure, alignment and caption.
+			const parentClasses = parent?.properties?.className;
+			if (
+				parent?.tagName === "figure" &&
+				Array.isArray(parentClasses) &&
+				parentClasses.includes("firefly-aligned-image")
+			) {
+				node.properties = imgProps;
+				return;
+			}
+
 			// 获取 alt 属性
 			const alt = imgProps.alt;
 

@@ -223,3 +223,36 @@ body.wallpaper-transparent .custom-md {
 	line-height: 1.9;
 	overflow-wrap: anywhere;
 }
+
+/* Explicit alignment from the admin image component, including captionless images. */
+.custom-md .firefly-aligned-image {
+	margin: 1.5em 0;
+	text-align: left;
+}
+
+.custom-md .firefly-aligned-image > img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin: 0 auto 0 0;
+}
+
+.custom-md .firefly-aligned-image[data-align="center"] {
+	text-align: center;
+}
+
+.custom-md .firefly-aligned-image[data-align="center"] > img {
+	margin-inline: auto;
+}
+
+.custom-md .firefly-aligned-image[data-align="right"] {
+	text-align: right;
+}
+
+.custom-md .firefly-aligned-image[data-align="right"] > img {
+	margin-inline: auto 0;
+}
+
+.custom-md .firefly-aligned-image > figcaption {
+	margin-top: 0.5em;
+}

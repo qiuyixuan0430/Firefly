@@ -23,6 +23,48 @@ img {
 	white-space: normal;
 }
 
+.firefly-aligned-image {
+	margin: 1.5em 0;
+	text-align: left;
+}
+
+.firefly-aligned-image > img {
+	display: block;
+	margin: 0 auto 0 0;
+}
+
+.firefly-aligned-image[data-align="center"] {
+	text-align: center;
+}
+
+.firefly-aligned-image[data-align="center"] > img {
+	margin-inline: auto;
+}
+
+.firefly-aligned-image[data-align="right"] {
+	text-align: right;
+}
+
+.firefly-aligned-image[data-align="right"] > img {
+	margin-inline: auto 0;
+}
+
+.firefly-aligned-image > figcaption {
+	margin-top: 0.5em;
+	font-size: 0.9em;
+	opacity: 0.8;
+}
+
+.firefly-formula-preview {
+	max-width: 100%;
+	overflow-x: auto;
+}
+
+.firefly-formula-error {
+	color: #c0392b;
+	white-space: pre-wrap;
+}
+
 @media (prefers-color-scheme: dark) {
 	body {
 		background: #172033;

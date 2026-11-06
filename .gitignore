@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# Generated from the installed KaTeX dependency before dev/build.
+public/admin/vendor/katex/
+
 # generated types
 .astro/
 
