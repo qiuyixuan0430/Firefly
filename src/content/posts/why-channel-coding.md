@@ -4,8 +4,9 @@ published: 2026-11-15
 updated: 2026-11-16
 description: ''
 image: /uploads/pasted-image-1794803072657.png
-category: ''
-tags: []
+category: 科研
+tags:
+  - 科研
 draft: true
 pinned: false
 comment: true
