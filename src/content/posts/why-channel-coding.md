@@ -103,4 +103,8 @@ $$
 
 $$
 
-<span style="font-family: Times New Roman, Times, serif; font-size: 18px">　　这3个额外比特就是纠错的关键。</span>
+<span style="font-family: Times New Roman, Times, serif; font-size: 18px">　　这3个额外比特就是纠错的关键。原始信息为1011，而经典的7位汉明码会在第1，2，4位添加校验位p，而剩余的3，5，6，7位则是原始信息d1-d4。</span>
+
+<figure class="firefly-aligned-image" data-align="center"><img src="/uploads/pasted-image-1794833547825.png" alt="" title="" /><figcaption>7位汉明码</figcaption></figure>
+
+如何确定校验位
