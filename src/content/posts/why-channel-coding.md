@@ -1,9 +1,9 @@
 ---
 title: why channel coding
 published: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-16
 description: ''
-image: ''
+image: /uploads/pasted-image-1794803072657.png
 category: ''
 tags: []
 draft: true
