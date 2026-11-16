@@ -107,4 +107,14 @@ $$
 
 <figure class="firefly-aligned-image" data-align="center"><img src="/uploads/pasted-image-1794833547825.png" alt="" title="" /><figcaption>7位汉明码</figcaption></figure>
 
-如何确定校验位
+<span style="font-family: Times New Roman, Times, serif; font-size: 18px">　　接下来确定校验位，我们使用偶校验，每一组参与校验的比特中，1的个数必须为偶数，3个额外比特分别对4位原始数据中的3位进行校验，P1负责校验第124位，由于是偶校验，有：</span>
+
+$$
+P_1\oplus d_1\oplus d_2\oplus d_4=0
+$$
+
+<span style="font-family: Times New Roman, Times, serif; font-size: 18px">　　对比原始数据可知，P1=0相对的，P2负责校验第1，3，4位，P4负责校验2，3，4位，同样根据异或运算可知，P2=1，P4=0，这样我们就得到了完整的码字：</span>
+
+<figure class="firefly-aligned-image" data-align="center"><img src="/uploads/pasted-image-1794847285509.png" alt="" title="" /><figcaption>完整7位码字</figcaption></figure>
+
+<span style="font-family: Noto Serif SC, Songti SC, SimSun, serif; font-size: 18px">　　关于三位校验码负责校验的位数，实际上设计的非常精妙：</span>
